@@ -1,0 +1,125 @@
+body {
+	font-family: "adobe-clean";
+	font-weight: 300;
+}
+
+b {
+	font-weight: 700;
+}
+
+.swagger-section #auth_container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: inherit;
+	padding: inherit;
+	min-width: 760px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+}
+
+/*.toggleEndpointList {
+	display: none;
+}
+*/
+.contentWrapper {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	background-color: #EEE;
+}
+
+.headerHeadContainer {
+	background-color: #292929;
+	height: 50px;
+}
+
+.headerHeadContainer .headerHeadContent {
+	margin: 0 auto 0 75px;
+	display: block;
+}
+
+.logoImage {
+	position: relative;
+	z-index: 10;
+	vertical-align: middle;
+	border: 0;
+}
+
+.headerHeadContainer .logoImage {
+	max-width: 80px;
+	max-height: 80px;
+}
+
+.headerHeadContainer .headerHeadTextContainer {
+	display: inline-block;
+	overflow-y: hidden;
+	max-height: 50px;
+}
+
+.headerHeadContainer .headerHeadText {
+	margin: 0 0 0 10px;
+	color: #fff;
+	font-size: 20px;
+	font-family: adobe-clean;
+	font-weight: 400;
+	line-height: 1.1;
+}
+
+.swagger-section #auth_container .authorize__btn {
+	color: #fff;
+	background: #4283d0;
+	font-family: "source-sans-pro", "Source sans pro";
+	font-size: .875rem;
+	border: .0625rem solid transparent;
+	border-radius: 1.875rem;
+	cursor: pointer;
+	/*height: 1.875rem;*/
+	margin: 0;
+	min-width: 5.625rem;
+	padding: 0.25rem 0.9375rem;
+	white-space: nowrap;
+	display: inline;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	line-height: 1.42857;
+	width: 77px;
+	position: absolute;
+	right: 20px;
+	height: 20px;
+}
+
+.authRole {
+	font-family: adobe-clean !important;
+	font-size: .875rem !important;
+	color: black;
+	padding: 0.25rem 0.9375rem;
+	margin-top: 5px;
+	right: 150px;
+	position: absolute;
+}
+
+.auth_overview {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: inherit;
+	padding: inherit;
+	min-width: 760px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	line-height: 1.6;
+	margin-bottom: 30px;
+}
+
+.auth_overview>h4 {
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 25px;
+}

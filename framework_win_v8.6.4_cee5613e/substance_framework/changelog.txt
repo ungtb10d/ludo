@@ -1,0 +1,471 @@
+Substance Engine / Linker / Framework
+Changelog
+
+v8.6.4 - 2022/09/09
+===================
+Changes:
+ - Added the "EnumButtons" input widget type to the Framework API
+
+
+v8.6.3 - 2022/08/16
+===================
+Changes:
+ - Removed support for VS2015
+
+Bugfixes:
+ - Added the substanceHandle[GS]etUserData API entry points to the
+   internal dynload component
+ - Fixed broken error reporting from the Linker library when an unsupported
+   SBSAR format version is encountered
+ - Fixed a bug in the Vulkan backend where data could be copied to an
+   improperly-aligned address
+ - Fixed a bug where using out-of-range values as inputs to a Channel Shuffle
+   node could lead to memory corruption
+
+
+v8.6.2 - 2022/07/11
+===================
+Bugfixes:
+ - Fixed a bug where the Engine would leave an uninitialized field in a
+   descriptor used by our internal abstraction layer (Vulkan, Metal)
+ - Added the substanceHandlSetMaxNodeSize API entry point to the internal
+   dynload component
+
+
+v8.6.1 - 2022/07/01
+===================
+Bugfixes:
+ - The Framework will now properly copy the metadata packet attached to a
+   graph description when copying it
+ - The Framework will now properly escape special characters when serializing
+   string parameters to a preset file
+ - The Framework will now expose the description attached to an output if it
+   was filled in Designer when the SBSAR was authored
+ - The Engine will no longer try to access a potentially invalid render
+   context when generating mip levels for a texture
+ - The Engine will now properly measure time intervals when the time-slicing
+   API is used
+
+
+v8.6.0 - 2022/06/13
+===================
+Changes:
+ - Function graphs used to drive node parameters as well as pixel and value
+   processors will now be computed using just-in-time generated code when
+   running on Apple Silicon, like they currently are when running on x64 CPUs
+
+
+v8.5.3 - 2022/05/03
+===================
+This is an internal release
+Bugfixes:
+ - The Visual Studio project files that ship with the Framework tutorials will
+   now copy the build products to the correct folders
+ - The Neon backend will now properly emulate the movemask_ps Intel SSE
+   instruction when performing range-checking operations
+
+
+v8.5.2 - 2022/04/04
+===================
+Changes:
+ - Source files in the user-facing SDK now have the proper copyright notice
+ - The organization and product names have been updated in the Engine and
+   Linker libraries
+ - A CMakeLists.txt file is now provided in the user-facing SDK in order to
+   do local builds of the Framework and the Framework tutorials
+ - The Engine and Linker dynamic libraries now carry the proper version numbers
+   instead of the generic '1.0.0' suffix
+ - Internal packages now also contain debug builds of the Engine, Linker and
+   Framerwork libraries on Linux and macOS
+ - The Framework will now parse the components, name and colorspace of the
+   "channel usages" set at authoring time in Substance Designer. These
+   structures are accessible via the mChannelsFull member of the InputDesc
+   and OutputDesc classes. The mChannels and mChannelsStr members remain for
+   the sake of code compatibilty and only contain the channel usage name, as
+   they did before. All the channel usage / colorspace content is now in
+   channel.h, colorspace.h is kept for the sake of code compatibility
+
+Bugfixes:
+ - An invalid assert was removed from the Framework
+
+
+v8.5.1 - 2022/03/04
+===================
+Bugfixes:
+ - The Metal engine now has its own internal symbols hidden and should no
+   longer cause crashes when other instances of some third-parties are used
+   in the same process
+ - The non-blend Metal engine will now take the id of an MTLCommandQueue as
+   input (as well as the id of an MTLDevice) in order to avoid the use of
+   multiple unsynchronized command queues
+ - The Framework fix introduced in v8.5.0 caused a regression that would
+   introduce a one run() delay between GraphInstance push operations and the
+   availability of the new outputs
+
+
+v8.5.0 - 2022/02/24
+===================
+Changes:
+ - The Metal engine is now available for OSX, both in the Blend configuration
+   and in the Non-Blend configuration
+
+Bugfixes:
+ - The Framework will now properly block when chaining asynchronous renders,
+   push operations of new / modified graph instances, then synchronous renders
+ - The Engine will now correctly initialize all members of an internal interop
+   structure. This could cause a crash when using the non-blend Vulkan GPU
+   engine
+ - The Engine will now pass the correct userData to the image input lock/unlock
+   callbacks when running on the GPU
+
+
+v8.4.2 - 2021/12/09
+===================
+Changes:
+ - The Framework library is now built using the _GLIBCXX_USE_CXX11_ABI=0
+   define on Linux to match the way we build our products
+
+
+v8.4.1 - 2021/12/01
+===================
+This is an internal release with no user-facing impact
+
+
+v8.4.0 - 2021/11/17
+===================
+Changes:
+ - The Vulkan engine is now available for Windows, OSX and Linux, both in the
+   Blend configuration and in the Non-Blend configuration. Only VS2019/64b/MD
+   builds are available on Windows. OSX builds use MoltenVK
+ - The non-blend OpenGL and Vulkan engines will now include width/height,
+   mip count and format info when returning/filling SubstanceTexture structs
+
+Bugfixes:
+ - The Linker will now always write the uniform variables of a GLSL shader
+   generated from a Pixel Processor node in the correct order
+
+
+v8.3.0 - 2021/09/03
+===================
+Changes:
+ - The Linker and the Framework can now report the major version number of an
+   SBSAR package or SBSASM buffer. The Linker has a new
+   substanceLinkerHandleGetLastSBSASMVersion API entry point, and the
+   Framework exposes the PackageDesc::getSBSASMVersionNumber() method
+ - The Framework now recognizes and exposes the 'atlas_material' and the
+   'decal_material' graph types
+
+Bugfixes:
+ - The Linker will no longer cause a crash in the Engine when used by the
+   Framework after writing wrong data for an image input's default value
+ - The Linker will now inject proper Transfo2D nodes when using the "connect
+   graph A's output to graph B's input" feature (this is used by the
+   Framework's PackageStackDesc class), which will prevent rendering artefacts
+   when running on the CPU
+
+
+v8.2.0 - 2021/07/29
+===================
+Changes:
+ - The Framework can now expose extra resources contained inside an SBSAR
+   file via the PackageDesc::getExtraResource() method
+ - The Framework's UTF8/UTF16 conversion code is no longer C++-11 specific
+   and should now be buildable with other versions of the C++ standards
+ - The Substance Engine include files will no longer assume that Intel
+   Compiler being used means that the target OS is Windows
+ - The PC SDK and Framework package now include ready-to-use VS2017 .sln
+   and .vcxproj files for the tutorials allowing them to be rebuilt in
+   place if the SDK is installed in a folder where writing is allowed
+
+Bugfixes:
+ - The Linker (and the Framework on top of it) will now properly report
+   corrupted entries inside an SBSAR file instead of asserting/crashing
+ - The Framework will now assign the GraphType_EnvironmentLight GraphType
+   enum value to graphs with the 'light' graph type string
+
+
+v8.1.0 - 2021/05/12
+===================
+Changes:
+ - The Apple Silicon architecture is now supported. Performance is not yet
+   up-to-par with the x64 backend and this will be improved in the future.
+   The CPU variant is supported, using NEON for the SIMD code, and OpenGL3
+   is used as the graphics API for the GPU backend. Metal support will be
+   added later on
+ - Rendering differences between GPU manufacturers and between CPU
+   vendors/archs have been reduced by using precise (but slightly slower)
+   instructions in places where faster (but imprecise) operations were
+   used. No observable performance impact was noticed
+ - The traversal of the FxMap tree will now be single-threaded when different
+   blending modes are used in quadrant nodes in order to minimize noise
+   instabilities across multiple renderings
+
+New Framework features:
+ - The Framework now recognizes and exposes the 'graphtype' attribute
+ - The Framework now recognizes and exposes the following new channel types:
+   coatOpacity, scatteringDistanceScale, specularEdgeColor, sheenOpacity,
+   sheenColor, sheenRoughness, translucency, scatteringColor,
+   emissiveIntensity, heightScale, heightLevel, coatIOR, coatSpecularLevel,
+   dispersion, absorptionColor, absorptionDistance, scatteringDistance,
+   scatteringRedShift, scatteringRayleigh
+ - The Framework now recognizes and exposes the XMP metadata packet attached
+   to packages, graphs, inputs and outputs
+
+Bugfixes:
+ - The Bytecode evaluator of the Engine will now correctly perform sampling
+   operations in floating-point textures when invoked from the CPU engine
+ - The Engine will now correctly clamp values when computing Levels nodes
+   in FP32 precision when running on the CPU
+ - The Engine will now properly consider FxMaps morphlets as invalid when
+   their size is -0.0f (only '+0.0f' sizes were detected previously)
+ - The Engine will no longer produce NaN values when processing Blend nodes
+   operating in 'straight' mode when running on the CPU
+ - The Engine will now produce the exact same random numbers when running on
+   top of the Direct3D and OpenGL3 graphics API
+ - The Engine will now correctly compute mipmaps for color nodes in 16F/32F
+   precision when running on the CPU
+ - The Engine will now use the GPU to compute mipmaps for bitmap nodes that
+   are consumed by FxMaps/Pixel Processor/Transform nodes when running on
+   the GPU
+ - The Linker will no longer randomly crash when sorting nodes internally
+
+
+v8.0.8 - 2020/12/22
+===================
+Bugfixes:
+ - The Engine will now call the correct GL uniform setting API functions
+   for vectors of 2, 3 or 4 unsigned integers when setting up Pixel
+   Processor nodes
+
+
+v8.0.7 - 2020/12/16
+===================
+Changes:
+ - The Framework now recognizes and exposes the 'physicalSize' output usage
+
+
+v8.0.6 - 2020/12/09
+===================
+Changes:
+ - The PC SDK now includes libraries built with VS2019
+Bugfixes:
+ - The Linker will now generate shorter code sequences when translating the
+   `sqrt` function into shader code or source, lowering the risk of hitting
+   the instruction limit when compiling GLSL shaders for instance
+
+
+v8.0.5 - 2020/11/09
+===================
+Bugfixes:
+ - The Engine will no longer sample the 'Source' entry of a Distance node
+   outside allowed bounds when said entry is of smaller size than the
+   Distance node itself when running on the CPU
+ - The Engine will now generate correct mip levels when using manual mip level
+   selection for Transfo nodes, without producing filtering artifacts on the
+   border when running on the CPU
+
+
+v8.0.4 - 2020/10/16
+===================
+Changes:
+ - The PC SDK installer no longer contains VS2013 builds of the
+   engine/linker/framework libraries
+Bugfixes:
+ - The Engine now correct results when computing the Distance node on the GPU
+   in 16I/16F/32F texture formats
+
+
+v8.0.3 - 2020/09/23
+===================
+Bugfixes:
+ - The Distance node on the GPU could in some cases output full white pixels
+   (corresponding to a null distance) at lower luminance levels than needed
+
+
+v8.0.2 - 2020/09/16
+===================
+New Framework features:
+ - The Framework now exposes 'link start/end' and 'render start/end' callbacks
+
+Bugfixes:
+ - Debug builds of the Linker could assert when processing old gradient data
+   that had been manually edited before cooking
+ - The Linker now generates correct code for function graphs that sample
+   unconnected entries past the last connected one
+
+
+v8.0.1 - 2020/09/11
+===================
+Bugfixes:
+ - The Linker could write misaligned data when encoding gradient data inside
+   SVG nodes
+ - The Engine could use uninitialized memory as the default color for a bitmap
+   with no content
+
+
+v8.0.0 - 2020/09/09
+===================
+New Engine features:
+ - Input images can now have a default color that is used when no input is provided
+ - New 'Smooth' interpolation node for the Gradient node
+ - Per-key midpoint (-1 .. 1) is now taken into account for the 'Flat Tangents'
+   (previously 'Interp') interpolation mode
+ - New 'expose curve' mode for the Curve node outputs the computed curve (grayscale
+   only)
+ - New 'Manhattan' and 'Chebyshev' distance computation modes for the Distance node
+ - The 'patternsuppl' parameter for Quadrant nodes is no longer clamped for
+   GradOffset morphlets
+
+New Framework features:
+ - The Framework now reports the default color of input images when available
+ - The Framework now reports spot color info for color parameters when available
+
+Additions:
+ - A changelog is now available, you're reading it
+ - Some helper enum values have been added to help decode the channel order of a
+   SubstanceTexture
+
+Bugfixes:
+ - The Engine does not spinlock anymore when asking the D3D driver to allocate a
+   texture that the driver cannot allocate because of insufficient memory. The
+   'out of memory' callback will be called (as before), but the renders will be
+   progressively downscaled instead
+ - When encountering extra files in an SBSAR, the Linker would pass them to the
+   appropriate callback but would mispropagate their size
+ - Some rendering errors have been fixed for the Distance node on the GPU
+ - 16-bit grayscale textures output by the engine would reach 65534 for full white
+   instead of 65535
+ - The OGL3 engine could sometimes fail GL program validation on OSX but still
+   produce correct results
+ - A wrong GL buffer mapping flag was used on OSX, causing unneeded CPU-GPU
+   synchronization and reducing performance
+
+
+v7.2.10 - 2020/04/17
+====================
+Additions:
+ - The Framework now exposes a 'job completion' callback
+ - The Framework now exposes custom true/false label for boolean parameters
+ - The Framework now exposes 'position' type widgets
+
+
+v7.2.9 - 2020/01/10
+===================
+Bugfixes:
+ - The Linker now generates correct code for pow2 when the input argument is
+   smaller than -127.0f or larger than 127.0f
+
+
+v7.2.8 - 2019/12/19
+===================
+Bugfixes:
+ - The Linker could crash in some circumstances when generating code for function
+   graphs
+
+
+v7.2.7 - 2019/12/18
+===================
+Bugfixes:
+ - The Engine could fail to decode JPEG data compressed with a very low quality
+   setting
+ - The Linker could cause a double-free when decoding invalid SBSAR data
+
+
+v7.2.6 - 2019/12/04
+===================
+Bugfixes:
+ - The Linker could crash when decoding 0-byte entries in SBSAR files
+
+
+v7.2.5 - 2019/11/19
+===================
+Bugfixes:
+ - The Linker now generates correct code for log2 when the input argument is
+   negative or zero
+
+
+v7.2.4 - 2019/11/05
+===================
+Bugfixes:
+ - The Linker could crash in some circumstances when doing register allocation
+
+
+v7.2.3 - 2019/10/17
+===================
+Bugfixes:
+ - The Engine now only uses the MAP_JIT flag when running on OSX >= Mojave
+
+
+v7.2.2 - 2019/10/07
+===================
+Bugfixes:
+ - The Linker now generates better precision code for sqrt
+ - The Framework can now properly call the new substanceHandleSetMaxNodeSize
+   engine API entry point
+
+
+v7.2.1 - 2019/08/30
+===================
+Additions:
+ - The Engine library is now properly signed and MAP_JIT enabled on OSX
+
+Bugfixes:
+ - The Framework now builds properly with C++17 compilers
+ - Debug builds of the Engine could incorrectly assert when reading shaders
+   generated from pixel processors
+
+
+v7.2.0 - 2019/08/23
+===================
+New Linker features:
+ - LZMA SDK updated to 19.00 (optimized CRC and LZMA decode)
+ - The Linker can now read SBSASM data larger than 2GB and produce valid SBSBIN
+   files that are larger than 4GB
+
+New Engine features:
+ - The Engine now exposes a new 'substanceHandleSetMaxNodeSize' API entry point
+   to be used when clamping of internal renders is needed (preview rendering for
+   instance)
+ - The Engine now properly reads SBSBIN files that are larger than 4GB
+
+Bugfixes:
+ - The Framework now passes the correct engine ID to fillSubstanceDevice
+ - The Framework could create a race condition where a job could be marked 
+   'cancelled' and 'in progress' at the same time
+
+
+v7.0.0 - 2019/05/08
+===================
+New Engine features:
+ - The Engine now supports value processors and value outputs
+ - The Engine now supports a new 'Gradation with Offset' morphlet type
+ - The Engine dynamic library now carries proper version numbers on Windows
+ - The Engine now uses DX bytecode generated from Pixel Processor nodes when
+   using the Direct3D 11 backend (this was already the case for the Direct3D
+   10 backend)
+
+New Linker features:
+ - The Linker now calls a new callback when encountering extra files in the
+   SBSAR file
+ - The Linker dynamic library now carries proper version numbers on Windows
+
+New Framework features:
+ - The Framework will now expose the thumbnails from the graphs contained
+   in an SBSAR file
+
+Bugfixes:
+ - The PC SDK installer now includes the 64b version of the VC2017 redist
+ - The Linker could incorrectly consider a Blend node as a dynamic switch
+   instead of a static one, leaving both branches present in the resulting
+   SBSBIN
+ - The Engine now properly processes the alpha channel in FP32 switch blend
+   operations
+ - The Engine now properly outputs a 1.0f luminance value when processing a
+   15b 0x7FFF value
+ - The Engine could incorrectly chain nodes when optimizing a Warp node as
+   a copy operation
+ - The Linker now uses faster code to convert bitmaps internally
+ - The Engine could call CopyResource with invalid arguments when using the
+   Direct3D backend
+ - The Engine will now apply format changes and upscale/downscale in the order
+   that introduces the least amount of precision loss when converting bitmaps

@@ -1,0 +1,4 @@
+var structSubstanceAir_1_1next__integer__sequence_3_01integer__sequence_3_01T_00_01Nums_8_8_8_01_4_01_4 =
+[
+    [ "type", "structSubstanceAir_1_1next__integer__sequence_3_01integer__sequence_3_01T_00_01Nums_8_8_8_01_4_01_4.html#a5c5b738256505a29bc016264541997a7", null ]
+];

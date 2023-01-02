@@ -1,0 +1,15 @@
+<sbspresets formatversion="1.0" count="2">
+ <sbspreset pkgurl="pkg://Autumn_Leaves/Autumn_Leaves" label="Green">
+  <presetinput identifier="Size_Variation" uid="1186232720" type="0" value="0.25"/>
+  <presetinput identifier="Season" uid="1186313795" type="0" value="0.245"/>
+  <presetinput identifier="Colour_Variation" uid="1188603243" type="0" value="0.01"/>
+  <presetinput identifier="Shadow" uid="1188773589" type="0" value="0.184"/>
+  <presetinput identifier="Contrast" uid="1196629507" type="0" value="0.312"/>
+ </sbspreset>
+ <sbspreset pkgurl="pkg://Autumn_Leaves/Autumn_Leaves" label="SomeRed">
+  <presetinput identifier="Size" uid="1186232335" type="0" value="1.935"/>
+  <presetinput identifier="Season" uid="1186313795" type="0" value="0.929"/>
+  <presetinput identifier="Density" uid="1188409495" type="0" value="0.016"/>
+  <presetinput identifier="Depth" uid="1197092091" type="0" value="0.406"/>
+ </sbspreset>
+</sbspresets>

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{263A4B11-5C62-317F-AE84-019BA26FED1F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>substance_framework</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">substance_framework.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">substance_framework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">substance_framework.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">substance_framework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">substance_framework.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">substance_framework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">substance_framework.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">substance_framework</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;SUBSTANCE_PLATFORM_BLEND;NDEBUG;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SUBSTANCE_PLATFORM_BLEND;NDEBUG;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4335;4800</DisableSpecificWarnings>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;SUBSTANCE_PLATFORM_BLEND;NDEBUG;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;SUBSTANCE_PLATFORM_BLEND;NDEBUG;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SUBSTANCE_PLATFORM_BLEND;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SUBSTANCE_PLATFORM_BLEND;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SUBSTANCE_PLATFORM_BLEND;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SUBSTANCE_PLATFORM_BLEND;_GNU_SOURCE;ALG_ISA_SSE2;ALG_ISASSE1;ALG_DEBUG_STRIP_MESSAGES;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;ISOLATION_AWARE_ENABLED=1;_HYBRID;IS_HYBRID;SECURE_SCL=0;WIN64;_USRDLL;NOMINMAX;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>..\include;..\3rdparty\tinyxml;..\3rdparty\utf8cpp\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\details\detailscomputation.cpp" />
+    <ClInclude Include="..\src\details\detailscomputation.h" />
+    <ClCompile Include="..\src\details\detailsdeltastate.cpp" />
+    <ClInclude Include="..\src\details\detailsdeltastate.h" />
+    <ClCompile Include="..\src\details\detailsduplicatejob.cpp" />
+    <ClInclude Include="..\src\details\detailsduplicatejob.h" />
+    <ClCompile Include="..\src\details\detailsdynload.cpp" />
+    <ClInclude Include="..\src\details\detailsdynload.h" />
+    <ClCompile Include="..\src\details\detailsengine.cpp" />
+    <ClInclude Include="..\src\details\detailsengine.h" />
+    <ClCompile Include="..\src\details\detailsgraphbinary.cpp" />
+    <ClInclude Include="..\src\details\detailsgraphbinary.h" />
+    <ClCompile Include="..\src\details\detailsgraphstate.cpp" />
+    <ClInclude Include="..\src\details\detailsgraphstate.h" />
+    <ClInclude Include="..\src\details\detailsinputimagetoken.h" />
+    <ClCompile Include="..\src\details\detailsinputstate.cpp" />
+    <ClInclude Include="..\src\details\detailsinputstate.h" />
+    <ClCompile Include="..\src\details\detailslinkcontext.cpp" />
+    <ClInclude Include="..\src\details\detailslinkcontext.h" />
+    <ClCompile Include="..\src\details\detailslinkdata.cpp" />
+    <ClInclude Include="..\src\details\detailslinkdata.h" />
+    <ClCompile Include="..\src\details\detailslinkgraphs.cpp" />
+    <ClInclude Include="..\src\details\detailslinkgraphs.h" />
+    <ClCompile Include="..\src\details\detailsoutputsfilter.cpp" />
+    <ClInclude Include="..\src\details\detailsoutputsfilter.h" />
+    <ClCompile Include="..\src\details\detailsoutputstate.cpp" />
+    <ClInclude Include="..\src\details\detailsoutputstate.h" />
+    <ClCompile Include="..\src\details\detailsrendererimpl.cpp" />
+    <ClInclude Include="..\src\details\detailsrendererimpl.h" />
+    <ClCompile Include="..\src\details\detailsrenderjob.cpp" />
+    <ClInclude Include="..\src\details\detailsrenderjob.h" />
+    <ClCompile Include="..\src\details\detailsrenderpushio.cpp" />
+    <ClInclude Include="..\src\details\detailsrenderpushio.h" />
+    <ClCompile Include="..\src\details\detailsrendertoken.cpp" />
+    <ClInclude Include="..\src\details\detailsrendertoken.h" />
+    <ClCompile Include="..\src\details\detailsstates.cpp" />
+    <ClInclude Include="..\src\details\detailsstates.h" />
+    <ClInclude Include="..\src\details\detailssync.h" />
+    <ClCompile Include="..\src\details\detailssync_dummy.cpp" />
+    <ClCompile Include="..\src\details\detailssync_pthread.cpp" />
+    <ClCompile Include="..\src\details\detailssync_win32.cpp" />
+    <ClCompile Include="..\src\details\detailsstringutils.cpp" />
+    <ClInclude Include="..\src\details\detailsstringutils.h" />
+    <ClInclude Include="..\src\details\detailsutils.h" />
+    <ClCompile Include="..\src\details\detailsxml.cpp" />
+    <ClInclude Include="..\src\details\detailsxml.h" />
+    <ClCompile Include="..\src\callbacks.cpp" />
+    <ClCompile Include="..\src\channel.cpp" />
+    <ClCompile Include="..\src\graph.cpp" />
+    <ClCompile Include="..\src\input.cpp" />
+    <ClCompile Include="..\src\inputimage.cpp" />
+    <ClCompile Include="..\src\memory.cpp" />
+    <ClCompile Include="..\src\output.cpp" />
+    <ClCompile Include="..\src\package.cpp" />
+    <ClCompile Include="..\src\preset.cpp" />
+    <ClCompile Include="..\src\renderer.cpp" />
+    <ClCompile Include="..\src\renderresult.cpp" />
+    <ClCompile Include="..\src\stacking.cpp" />
+    <ClInclude Include="..\include\substance\framework\callbacks.h" />
+    <ClInclude Include="..\include\substance\framework\channel.h" />
+    <ClInclude Include="..\include\substance\framework\colorspace.h" />
+    <ClInclude Include="..\include\substance\framework\constants.h" />
+    <ClInclude Include="..\include\substance\framework\framework.h" />
+    <ClInclude Include="..\include\substance\framework\graph.h" />
+    <ClInclude Include="..\include\substance\framework\input.h" />
+    <ClInclude Include="..\include\substance\framework\input.inl" />
+    <ClInclude Include="..\include\substance\framework\inputimage.h" />
+    <ClInclude Include="..\include\substance\framework\memory.h" />
+    <ClInclude Include="..\include\substance\framework\output.h" />
+    <ClInclude Include="..\include\substance\framework\outputfmt.h" />
+    <ClInclude Include="..\include\substance\framework\outputopt.h" />
+    <ClInclude Include="..\include\substance\framework\package.h" />
+    <ClInclude Include="..\include\substance\framework\platform.h" />
+    <ClInclude Include="..\include\substance\framework\preset.h" />
+    <ClInclude Include="..\include\substance\framework\renderer.h" />
+    <ClInclude Include="..\include\substance\framework\renderopt.h" />
+    <ClInclude Include="..\include\substance\framework\renderresult.h" />
+    <ClInclude Include="..\include\substance\framework\stacking.h" />
+    <ClInclude Include="..\include\substance\framework\typedefs.h" />
+    <ClInclude Include="..\include\substance\framework\vector.h" />
+    <ClInclude Include="..\include\substance\framework\visibleif.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

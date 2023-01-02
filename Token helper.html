@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://learningmanager.adobe.com/docs/primeapi/v1/tokenHelper.html -->
+<html class="wf-adobeclean-n4-active wf-adobeclean-n3-active wf-sourcesanspro-n4-active wf-sourcesanspro-n7-active wf-sourcesanspro-n3-active wf-sourcesanspro-n6-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Token helper</title>
+<!-- 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link rel="icon" href="https://learningmanager.adobe.com/docs/primeapi/v1/tokenHelper/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="https://learningmanager.adobe.com/docs/primeapi/v1/tokenHelper/images/favicon.ico" type="image/x-icon">
+	<link href="./Token helper_files/typography.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="./Token helper_files/reset.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="./Token helper_files/screen.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="./Token helper_files/prime.css" rel="stylesheet" type="text/css">
+	    <script src="./Token helper_files/mfr7zpj.js.download" async=""></script><script>
+      //Typekit
+      (function (d) {
+        var config = {
+            kitId: 'mfr7zpj',
+            scriptTimeout: 3000
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className = h.className.replace(
+              /\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = '//use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || a && a != "complete" && a != "loaded")
+            return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config)
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s)
+      })(document);
+    </script>
+	<style type="text/css">
+	body{
+		font-family: source-sans-pro,"Source sans pro";
+	}
+	.contentWrapper{
+		background-color: #F5F5F5;
+	}
+	.form-inline, .form-group{
+	    margin-bottom: 30px;
+	}
+	input[type="submit"]{
+	    border-radius: 32px;
+	    height: 32px;
+	    background: #4283d0;
+	    border-color: snow;
+	    border-style: none;
+	    color: #FFFFFF;
+	    padding: 0px 24px;
+	    cursor: pointer;
+	    margin-left: 162px;
+	    font-size: 14px;
+	}
+	input[type="text"]{
+		width: 618px;
+	    height: 30px;
+	    padding-left: 10px;
+	}
+	input[type="text"]:valid {
+		background: #b0cbba;
+	}
+	.mainContent{
+		width: 800px;
+	    margin: auto;
+	    background: #ffffff;
+	    border: 1px solid #e8e8e8;
+	    padding: 30px;
+	    padding-left: 36px;
+    	padding-right: 36px;
+
+	}
+	.mainTitle{
+		font-size: 20px;
+	    height: 34px;
+	    font-weight: 400;
+	}
+	.mainText{
+		font-size: 14px;
+	    margin-bottom: 30px;
+	    color: #777777;
+	    line-height: 20px;
+	    font-weight: 400;
+	}
+	.subTitle{
+		font-size: 16px;
+	}
+	.contentText{
+		font-size: 12px;
+	}
+	.infoContainer{
+		width: 100%;
+	    margin-bottom: 18px;
+	    border-bottom: 1px solid #ccc;
+	}
+	.tokenInfoContainer{
+		width: 100%;
+	    margin-bottom: 18px;
+	    margin-top: 14px;
+	}
+	.tokenInfoHeader{
+		font-size: 18px;
+	    font-weight: 400;
+	    margin-bottom: 8px;
+	    color: #888888;
+	}
+	.tokenInfoText{
+		font-size: 14px;
+	    margin-bottom: 20px;
+	    color: #777777;
+	    line-height: 18px;
+	    font-weight: 400;
+	}
+	.infoHeader{
+		font-size: 18px;
+		font-weight: 400;
+		margin-bottom: 14px;
+	}
+	.infoText{
+		font-size: 14px;
+		margin-bottom: 20px;
+		color: #666666;
+		line-height: 18px;
+		font-weight: 400;
+	}
+	.formControl{
+		margin-bottom: 14px;
+	}
+	label{
+		width: 160px;
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 34px;
+	}
+	.buttonContainer{
+		width: 100%;
+		height: 32px;
+	}
+	.footerContainer{
+		margin-top: 32px;
+		border-top: 1px solid #CCCCCC;
+		padding-top: 10px;
+		height: 50px;
+	}
+	.footerLink{
+		text-decoration: none;
+		color: #AAAAAA;
+		margin-right: 8px;
+	}
+	</style><style type="text/css">.tk-adobe-clean{font-family:"adobe-clean",sans-serif;}.tk-source-sans-pro{font-family:"source-sans-pro",sans-serif;}</style><style type="text/css">@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/l?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/d?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/a?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/l?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/d?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/a?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:source-sans-pro;src:url(https://use.typekit.net/af/d21d6e/00000000000000003b9acb59/27/l?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/d21d6e/00000000000000003b9acb59/27/d?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/d21d6e/00000000000000003b9acb59/27/a?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:source-sans-pro;src:url(https://use.typekit.net/af/4f9e28/00000000000000003b9acb5c/27/l?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/4f9e28/00000000000000003b9acb5c/27/d?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/4f9e28/00000000000000003b9acb5c/27/a?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:source-sans-pro;src:url(https://use.typekit.net/af/27706f/00000000000000003b9acb56/27/l?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/27706f/00000000000000003b9acb56/27/d?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/27706f/00000000000000003b9acb56/27/a?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:source-sans-pro;src:url(https://use.typekit.net/af/36c3ee/00000000000000003b9acb5a/27/l?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/36c3ee/00000000000000003b9acb5a/27/d?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/36c3ee/00000000000000003b9acb5a/27/a?primer=17eb35f04219024e390abdffea2a8b6255acf62f0ed28336fa1949a90372b18c&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;font-stretch:normal;font-display:auto;}</style>
+</head>
+<body>
+
+<div class="contentWrapper">
+	<div class="headerHeadContainer">
+		<div class="headerHeadContent">
+			<img src="./Token helper_files/62306229.AdobeLogo.png" class="logoImage">
+			<div class="headerHeadTextContainer">
+				<h2 class="headerHeadText">Adobe Learning Manager</h2>
+			</div>
+		</div>
+	</div>
+	<div class="mainContent">
+		<div class="ia-view-container">
+			<div class="pagecontainer">
+				<div class="mainTitle">Access Tokens for Testing and Development</div>
+				<div class="mainText">Use this handy tool to quickly generate tokens for testing and development. Test tokens are just for you. Never share test tokens with other users or applications. Do not publish test tokens in public code repositories.</div>	
+				<!-- <div class="tokenInfoContainer">
+					<div class="tokenInfoHeader">Token generator</div>
+					<div class="tokenInfoText">Use this handy tool to quickly generate tokens for testing and development. Test tokens are just for you. Never share test tokens with other users or applications. Do not publish test tokens in public code repositories.</div>	
+				</div> -->
+				<form class="form-group" role="form" method="GET" action="https://learningmanager.adobe.com/oauth/o/authorize">
+					<div>
+						<div class="infoContainer">
+							<div class="infoHeader">Get OAuth Code</div>
+							<!-- <div class="infoText">Descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alique.</div> -->	
+						</div>
+						<div class="formControl">
+							<label for="client_id">Client ID</label>
+							<input name="client_id" type="text" placeholder="Enter client id" class="form-control" required="">
+						</div>
+						<div class="formControl">
+							<label for="redirect_uri">Redirect URI</label>
+							<input id="redirect_uri" name="redirect_uri" type="text" placeholder="Enter redirect uri" class="form-control" required="">	
+						</div>
+						<div class="formControl">
+							<label for="scope">Scopes</label>
+							<input name="scope" type="text" placeholder="Enter one or more comma seperated scopes" value="admin:read,admin:write" class="form-control" required="">	
+						</div>
+						<input name="response_type" type="hidden" value="CODE" class="form-control">
+						
+						<div class="buttonContainer">
+							<input type="submit" class="btn btn-default">
+						</div>
+					</div>
+				</form>
+				<form class="form-group" role="form" method="POST" action="https://learningmanager.adobe.com/oauth/token" enctype="application/x-www-form-urlencoded">
+					<div>
+						<div class="infoContainer">
+							<div class="infoHeader">Get Refresh Token</div>
+							<!-- <div class="infoText">Descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alique.</div> -->	
+						</div>
+						<div class="formControl">
+							<label for="client_id">Client id</label>
+							<input name="client_id" type="text" placeholder="Enter client id" class="form-control" required="">
+						</div>
+						<div class="formControl">
+							<label for="client_secret">Client secret</label>
+							<input name="client_secret" type="text" placeholder="Enter client secret" class="form-control" required="">
+						</div>
+						<div class="formControl">
+							<label for="code">Oauth code</label>
+							<input id="code" name="code" type="text" placeholder="Enter oauth code" class="form-control" required="">
+						</div>
+						<div class="buttonContainer">
+							<input type="submit" class="btn btn-default">
+						</div>
+					</div>
+				</form>
+				<form class="form-group" role="form" method="POST" action="https://learningmanager.adobe.com/oauth/token/refresh">
+					<div>
+						<div class="infoContainer">
+							<div class="infoHeader">Get Access Token</div>
+							<!-- <div class="infoText">Descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alique.</div>	 -->
+						</div>
+						<div class="formControl">
+							<label for="client_id">Client id</label>
+							<input name="client_id" type="text" placeholder="Enter client id" class="form-control" required="">
+						</div>
+						<div class="formControl">
+							<label for="client_secret">Client secret</label>
+							<input name="client_secret" type="text" placeholder="Enter client secret" class="form-control" required="">
+						</div>
+						<div class="formControl">
+							<label for="refresh_token">Refresh token</label>
+							<input name="refresh_token" type="text" placeholder="Enter a refresh token" class="form-control" required="">
+						</div>
+						<div class="buttonContainer">
+							<input type="submit" class="btn btn-default">
+						</div>
+					</div>
+				</form>
+				<form class="form-group" role="form" method="GET" action="https://learningmanager.adobe.com/oauth/token/check">
+					<div>
+						<div class="infoContainer">
+							<div class="infoHeader">Get Access Token Details</div>
+							<!-- <div class="infoText">Descriptions here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alique.</div>	 -->
+						</div>
+						<div class="formControl">
+							<label for="access_token">Access token</label>
+							<input name="access_token" type="text" placeholder="Enter an access token" class="form-control" required="">	
+						</div>
+						<div class="buttonContainer">
+							<input type="submit" class="btn btn-default">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footerContainer">
+			<a class="footerLink" target="_blank" href="https://helpx.adobe.com/captivate-prime/administrators.html">Help</a>
+			<a class="footerLink" target="_blank" href="https://www.adobe.com/legal/licenses-terms.html">Terms of Use</a>
+			<a class="footerLink" target="_blank" href="https://helpx.adobe.com/contact.html">Support</a>
+		</div>
+	</div>
+
+</div>
+
+
+	<script type="text/javascript" src="./Token helper_files/jquery.min.js.download"></script>
+	<script type="text/javascript" src="./Token helper_files/url.min.js.download"></script>
+	<script type="text/javascript">
+		(function() {
+
+			function getData(key, defaultVal)
+			{
+				var val = localStorage.getItem(key);
+				if(val === null)
+				{
+					return defaultVal;
+				}
+				return val;
+			}
+			function setData(key, val)
+			{
+				localStorage.setItem(key, val);
+			}
+			function deleteData(key)
+			{
+				localStorage.removeItem(key);
+			}
+
+			var current_url = location.protocol + '//' + location.host + location.pathname;
+			$('#redirect_uri').val(current_url);
+			
+			var code = url('?code');
+			if(code)
+			{
+				setData('code', code);
+				window.location.replace(current_url);	//to remove code from url
+			}
+			else
+			{
+				code = getData('code', null);
+				if(code)
+				{
+					$('#code').val(code);
+					deleteData('code');
+				}				
+			}
+		})();
+	</script>
+
+</body></html>

@@ -1,0 +1,27 @@
+var structSubstanceAir_1_1InputDescNumericalBase =
+[
+    [ "clone", "structSubstanceAir_1_1InputDescNumericalBase.html#abb57b6629968b6f8edf7486601f442fb", null ],
+    [ "getRawDefault", "structSubstanceAir_1_1InputDescNumericalBase.html#aded9bc5035deebeec514564dcf9bbce5", null ],
+    [ "instantiate", "structSubstanceAir_1_1InputDescNumericalBase.html#a79a4b6236999e5b21eef54c6e970ed6c", null ],
+    [ "isImage", "structSubstanceAir_1_1InputDescNumericalBase.html#ab22280bf9921d6c928c5a5d305df3fff", null ],
+    [ "isNumerical", "structSubstanceAir_1_1InputDescNumericalBase.html#a1793baa3b2a7ab46ef614525eec14fce", null ],
+    [ "isString", "structSubstanceAir_1_1InputDescNumericalBase.html#a17cc8f85487a2b5c2cd96801b11583f4", null ],
+    [ "mAlteredOutputUids", "structSubstanceAir_1_1InputDescNumericalBase.html#a7f7c6aa0b682992e2df6b810ab89012b", null ],
+    [ "mChannels", "structSubstanceAir_1_1InputDescNumericalBase.html#ac2bfafff392e612c15274faaf3c5bbb6", null ],
+    [ "mChannelsFull", "structSubstanceAir_1_1InputDescNumericalBase.html#a21895a31a5648a9dd13c8f908fe0b95e", null ],
+    [ "mChannelsStr", "structSubstanceAir_1_1InputDescNumericalBase.html#aab34da7200316f764595ac7d2db15fec", null ],
+    [ "mGuiDescription", "structSubstanceAir_1_1InputDescNumericalBase.html#a7fb4ea45874848b15b5761d317e9d683", null ],
+    [ "mGuiGroup", "structSubstanceAir_1_1InputDescNumericalBase.html#a7621d8c0100140cc2224d84ca75b028a", null ],
+    [ "mGuiVecLabels", "structSubstanceAir_1_1InputDescNumericalBase.html#af4d9df74c451356eea8eb215e67805bb", null ],
+    [ "mGuiVisibleIf", "structSubstanceAir_1_1InputDescNumericalBase.html#aca158ac6591265c0f364b979b9410a31", null ],
+    [ "mGuiWidget", "structSubstanceAir_1_1InputDescNumericalBase.html#a81029b9451303862c381f7b9808273f4", null ],
+    [ "mIdentifier", "structSubstanceAir_1_1InputDescNumericalBase.html#a96ce6a46cd4b02b97ad2ffb7e709b007", null ],
+    [ "mIsDefaultHeavyDuty", "structSubstanceAir_1_1InputDescNumericalBase.html#a27f30711c9c8634ace8959bb66de095f", null ],
+    [ "mLabel", "structSubstanceAir_1_1InputDescNumericalBase.html#ac99d5bdc54ec8beac6bcae693c41f1e9", null ],
+    [ "mShowAsPin", "structSubstanceAir_1_1InputDescNumericalBase.html#a8843a2c9d5e45cbdff5744dcb65b1ea0", null ],
+    [ "mSpotColorInfo", "structSubstanceAir_1_1InputDescNumericalBase.html#a9f2a4b42bb0683aacf4b440ad799d97b", null ],
+    [ "mType", "structSubstanceAir_1_1InputDescNumericalBase.html#a204b0f70d2a409fa572767d645984a5d", null ],
+    [ "mUid", "structSubstanceAir_1_1InputDescNumericalBase.html#a8cebe575f5ccdff147439fc63d65a698", null ],
+    [ "mUserTag", "structSubstanceAir_1_1InputDescNumericalBase.html#a45a8593189a1f53bfb163b7ba5b54f76", null ],
+    [ "mXMP", "structSubstanceAir_1_1InputDescNumericalBase.html#a7d6dea2e56afdd381bcdd18738bde5c3", null ]
+];
